@@ -5,7 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta property="og:title" content="J Computer Solutions LLC - Pocket Recorder">
+    <meta property="og:site_name" content="Pocket Recorder">
+    <meta property="og:url" content="https://pocketrecorder.jcompsolu.com">
+    <meta property="og:description" content="A PWA that allows you to record your video offline.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pocketrecorder.jcompsolu.com/logo.png">
+    <title>Pocket Recorder</title>
+    <script type="module">
+    // This is the "Offline copy of pages" service worker
+
+    /*
+     This code uses the pwa-update web component https://github.com/pwa-builder/pwa-update to register your service worker,
+     tell the user when there is an update available and let the user know when your PWA is ready to use offline.
+    */
+
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+
+    </script>
   </head>
   <body>
     <noscript>

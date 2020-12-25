@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="J Computer Solutions logo" src="./assets/logo.png">
+    <VideoRecorder/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VideoRecorder from './components/VideoRecorder.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    VideoRecorder
   }
 }
 </script>
