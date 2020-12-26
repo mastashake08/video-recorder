@@ -5,7 +5,7 @@
     "short_name": "Pocket Recorder",
     "scope": "/",
     "display": "standalone",
-    "start_url": "https://pocketrecorder.jcompsolu.com/",
+    "start_url": "/",
     "background_color": "#000000",
     "theme_color": "transparent",
     "description": "A PWA that allows you to record your video offline and save to your device.",
@@ -24,6 +24,6 @@
             "type": "image/png"
         }
     ],
-    "url": "https://pocketrecorder.jcompsolu.com",
+    "url": "/",
     "screenshots": []
 }
