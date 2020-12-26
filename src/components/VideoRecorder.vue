@@ -13,8 +13,16 @@
     <v-row v-if="!isRecording" class="text-center justify-center" transition="slide-x-transition">
       This PWA allows for offline recording and saving of video. Future upgrades
       will allow for directly upload to Youtube, filters and more!
+      <v-radio-group v-model="radioGroup" label="Camera Facing Mode" row>
+        <v-radio
+          v-for="n in cameraOptions"
+          :key="n"
+          :label="n"
+          :value="n"
+        ></v-radio>
+    </v-radio-group>
     </v-row>
-    <v-row class="text-center">
+    <v-row class="text-center justify-center">
       <v-col class="mb-5">
         <v-btn class="ma-2"
           color="green lighten-2"
@@ -39,7 +47,7 @@
         >
           mdi-cancel
         </v-icon>
-          </v-btn>
+      </v-btn>
       </v-col>
     </v-row>
     <v-row class="text-center">
@@ -67,13 +75,19 @@ export default {
       stream: {},
       recordedChunks: [],
       isRecording: false,
-      mediaRecorder: {}
+      mediaRecorder: {},
+      radioGroup: "user",
+      cameraOptions: ['user', 'environment']
     }
   },
   methods: {
     startRecord: function () {
       var that = this
-      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      navigator.mediaDevices.getUserMedia({ video: {
+        width: { min: 1024, ideal: 1280, max: 1920 },
+        height: { min: 576, ideal: 720, max: 1080 },
+        facingMode: this.radioGroup
+      }, audio: true })
       .then(function(stream) {
           that.stream = stream
           that.video.srcObject = stream
