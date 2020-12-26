@@ -1,11 +1,59 @@
 <template>
-  <div class="video-recorder">
-    <canvas></canvas>
-    <video id="recorder"></video>
-    <br>
-    <button v-on:click="startRecord" v-if="!isRecording"> Start Recording 🎥</button>
-    <button v-on:click="stopRecord" v-else> Stop Recording ❌ </button>
-  </div>
+  <v-container>
+    <v-row class="text-center">
+      <v-col cols="12">
+        <v-img
+          :src="require('../assets/logo.png')"
+          class="my-3"
+          contain
+          height="200"
+        />
+      </v-col>
+    </v-row>
+    <v-row v-if="!isRecording" class="text-center justify-center" transition="slide-x-transition">
+      This PWA allows for offline recording and saving of video. Future upgrades
+      will allow for directly upload to Youtube, filters and more!
+    </v-row>
+    <v-row class="text-center">
+      <v-col class="mb-5">
+        <v-btn class="ma-2"
+          color="green lighten-2"
+          v-on:click="startRecord"
+          v-if="!isRecording">
+          Record
+          <v-icon
+            dark
+            right
+          >
+            mdi-video
+          </v-icon>
+        </v-btn>
+        <v-btn class="ma-2"
+          color="red darken-2"
+          v-on:click="stopRecord"
+          v-else>
+          Stop
+        <v-icon
+          dark
+          right
+        >
+          mdi-cancel
+        </v-icon>
+          </v-btn>
+      </v-col>
+    </v-row>
+    <v-row class="text-center">
+      <v-col class="mb-4">
+        <v-card>
+          <v-responsive :aspect-ratio="16/9">
+            <canvas></canvas>
+            <video id="recorder"></video>
+          </v-responsive>
+        </v-card>
+      </v-col>
+    </v-row>
+
+</v-container>
 </template>
 
 <script>
@@ -116,5 +164,7 @@ export default {
   font-size: 30px;
 }
 canvas {
+  height: 100%;
+  width: 100%;
 }
 </style>
