@@ -10,7 +10,13 @@
     "theme_color": "transparent",
     "description": "A PWA that allows you to record your video offline and save to your device.",
     "orientation": "any",
-    "related_applications": [],
+    "related_applications": [
+      {
+        "platform": "play",
+        "url": "https://play.google.com/store/apps/details?id=xyz.appmaker.fjnsuw",
+        "id": "xyz.appmaker.fjnsuw"
+      }
+    ],
     "prefer_related_applications": false,
     "icons": [
         {
