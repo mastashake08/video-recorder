@@ -16,9 +16,9 @@
       <v-radio-group v-model="radioGroup" label="Camera Facing Mode" row>
         <v-radio
           v-for="n in cameraOptions"
-          :key="n"
-          :label="n"
-          :value="n"
+          :key="n.label"
+          :label="n.label"
+          :value="n.value"
         ></v-radio>
     </v-radio-group>
     </v-row>
@@ -77,7 +77,7 @@ export default {
       isRecording: false,
       mediaRecorder: {},
       radioGroup: "user",
-      cameraOptions: ['user', 'environment']
+      cameraOptions: [{value: 'user', label: 'Front'}, {value: 'environment', label: 'Rear'}]
     }
   },
   methods: {
