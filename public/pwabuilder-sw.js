@@ -1,6 +1,6 @@
 // This is the "Offline copy of assets" service worker
 
-const CACHE = "recorder-offline";
+const CACHE = "pocket-recorder-offline-v1";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
@@ -26,7 +26,7 @@ self.addEventListener('notificationclick', function(event) {
   switch (event.action) {
     case 'donate':
       console.log('Donate');
-      var url = 'https://cash.me/$mastashake08'
+      var url = 'https://cash.me/$jcompsolu'
       clients.openWindow(url)
       break;
     case 'close':
